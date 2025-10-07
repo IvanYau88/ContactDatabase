@@ -37,8 +37,9 @@ Before loading data into any layer, make sure to run the init_database.sql scrip
 This script sets up the required database schemas (bronze, silver, gold).
 
 -- Run in SQL Server Management Studio (SSMS)
+```
 :run init_database.sql
-
+```
 ---
 
 ## 🥉 Bronze Layer
@@ -49,18 +50,22 @@ No transformations are applied here — it simply stages the data for cleaning.
 
 Scripts
   - DDL Script: Defines the bronze tables (e.g., contact_exports, m_d_contact_list).
-  -Load Procedure (proc_load): Loads CSV data into these tables using BULK INSERT.
+  - Load Procedure (proc_load): Loads CSV data into these tables using BULK INSERT.
 
 How to Run
   1. Run the DDL script to create tables:
-      :run create_bronze_tables.sql
-  2. Run the load procedure:
+      ```
+     :run create_bronze_tables.sql
+      ```
+  3. Run the load procedure:
+       ```
        EXEC bronze.load_bronze;
-
+        ```
 This will truncate existing data and reload from:
+```
   - sources/contact_exports.csv
   - sources/m_d_contact_list.csv
-
+```
 ---
 
 ## 🥈 Silver Layer
@@ -74,12 +79,13 @@ Scripts
   - Tests Folder: Contains scripts to validate data quality after cleaning.
 
 How to Run
+```
 -- Create Silver tables
 :run create_silver_tables.sql
 
 -- Load and clean data
 EXEC silver.load_silver;
-
+```
 ---
 
 ## 🥇 Gold Layer
@@ -108,12 +114,18 @@ SELECT * FROM gold.contacts_international;
 
 The docs folder includes:
 
-what_i_need.txt — Notes describing what information each file should contain, for quick reference.
+- what_i_need.txt — Notes describing what information each file should contain, for quick reference.
 
 ---
 
 ## ✅ Summary
-Layer	Purpose	How to Run
+| Layer | Purpose | How to Run |
+| :------- | :------: | -------: |
+| Left     | Center   | Right    |
+| Bronze  | Raw data ingestion   | Run DDL → EXEC bronze.load_bronze;   |
+| Silver  | Data cleaning & transformation   | Run DDL → EXEC silver.load_silver;  |
+| Gold  | Final curated output   | Run DDL → query gold views  |
+Layer	   Purpose	How to Run
 Bronze	Raw data ingestion	Run DDL → EXEC bronze.load_bronze;
 Silver	Data cleaning & transformation	Run DDL → EXEC silver.load_silver;
 Gold	Final curated output	Run DDL → query gold views
