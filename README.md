@@ -2,7 +2,7 @@
 
 A database of REIT (Real Estate Investment Trust) contacts.
 
-📘 Overview
+##📘 Overview
 
 The ContactDatabase stores all REIT contacts that David has collected over time.
 Data originates from multiple Excel files that were cleaned and standardized to match the following column schema:
@@ -14,7 +14,7 @@ ZIP CODE, LINKEDIN
 
 The scripts folder contains all SQL scripts used to initialize and load data into the database across the Bronze, Silver, and Gold layers.
 
-🏗️ Initialization
+##🏗️ Initialization
 
 Before loading data into any layer, make sure to run the init_database.sql script first.
 This script sets up the required database schemas (bronze, silver, gold).
@@ -22,7 +22,7 @@ This script sets up the required database schemas (bronze, silver, gold).
 -- Run in SQL Server Management Studio (SSMS)
 :run init_database.sql
 
-🥉 Bronze Layer
+##🥉 Bronze Layer
 Purpose
 
 The Bronze Layer is the raw ingestion layer where data is loaded exactly as received from source files (CSV/Excel).
@@ -51,7 +51,7 @@ This will truncate existing data and reload from:
 sources/contact_exports.csv
 sources/m_d_contact_list.csv
 
-🥈 Silver Layer
+##🥈 Silver Layer
 Purpose
 
 The Silver Layer is the cleaned and standardized layer.
@@ -72,7 +72,7 @@ How to Run
 -- Load and clean data
 EXEC silver.load_silver;
 
-🥇 Gold Layer
+##🥇 Gold Layer
 Purpose
 
 The Gold Layer is the final presentation layer.
@@ -94,13 +94,13 @@ How to Run
 SELECT * FROM gold.contacts_united_states;
 SELECT * FROM gold.contacts_international;
 
-🗂️ Docs Folder
+##🗂️ Docs Folder
 
 The docs folder includes:
 
 what_i_need.txt — Notes describing what information each file should contain, for quick reference.
 
-✅ Summary
+##✅ Summary
 Layer	Purpose	How to Run
 Bronze	Raw data ingestion	Run DDL → EXEC bronze.load_bronze;
 Silver	Data cleaning & transformation	Run DDL → EXEC silver.load_silver;
