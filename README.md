@@ -9,9 +9,23 @@ A database of REIT (Real Estate Investment Trust) contacts.
 The ContactDatabase stores all REIT contacts that David has collected over time.
 Data originates from multiple Excel files that were cleaned and standardized to match the following column schema:
 
-FIRM_ID, CONTACT_ID, INVESTOR, FIRM TYPE, TITLE, NAME, ALTERNATIVE NAME,
-ROLE, JOB TITLE, ASSET CLASS, EMAIL, TEL, CITY, STATE, COUNTRY/TERRITORY,
-ZIP CODE, LINKEDIN
+Column Schema:
+  - FIRM_ID
+  - CONTACT_ID
+  - INVESTOR
+  - FIRM TYPE
+  - TITLE
+  - NAME
+  - ALTERNATIVE NAME
+  - ROLE
+  - JOB TITLE
+  - ASSET CLASS
+  - EMAIL
+  - TEL
+  - CITY
+  - STATE
+  - COUNTRY/TERRITORY
+  - ZIP CODE`
 
 
 The scripts folder contains all SQL scripts used to initialize and load data into the database across the Bronze, Silver, and Gold layers.
