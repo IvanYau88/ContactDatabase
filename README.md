@@ -2,6 +2,8 @@
 
 A database of REIT (Real Estate Investment Trust) contacts.
 
+---
+
 ##📘 Overview
 
 The ContactDatabase stores all REIT contacts that David has collected over time.
