@@ -125,7 +125,3 @@ The docs folder includes:
 | Bronze  | Raw data ingestion   | Run DDL → EXEC bronze.load_bronze;   |
 | Silver  | Data cleaning & transformation   | Run DDL → EXEC silver.load_silver;  |
 | Gold  | Final curated output   | Run DDL → query gold views  |
-Layer	   Purpose	How to Run
-Bronze	Raw data ingestion	Run DDL → EXEC bronze.load_bronze;
-Silver	Data cleaning & transformation	Run DDL → EXEC silver.load_silver;
-Gold	Final curated output	Run DDL → query gold views
