@@ -25,15 +25,14 @@ Column Schema:
   - CITY
   - STATE
   - COUNTRY/TERRITORY
-  - ZIP CODE`
-
+  - ZIP CODE
+  - LINKEDIN
 
 The scripts folder contains all SQL scripts used to initialize and load data into the database across the Bronze, Silver, and Gold layers.
 
 ---
 
 ## 🏗️ Initialization
-
 Before loading data into any layer, make sure to run the init_database.sql script first.
 This script sets up the required database schemas (bronze, silver, gold).
 
@@ -49,43 +48,30 @@ The Bronze Layer is the raw ingestion layer where data is loaded exactly as rece
 No transformations are applied here — it simply stages the data for cleaning.
 
 Scripts
-
-DDL Script: Defines the bronze tables (e.g., contact_exports, m_d_contact_list).
-
-Load Procedure (proc_load): Loads CSV data into these tables using BULK INSERT.
+  - DDL Script: Defines the bronze tables (e.g., contact_exports, m_d_contact_list).
+  -Load Procedure (proc_load): Loads CSV data into these tables using BULK INSERT.
 
 How to Run
-
-Run the DDL script to create tables:
-
-:run create_bronze_tables.sql
-
-
-Run the load procedure:
-
-EXEC bronze.load_bronze;
-
+  1. Run the DDL script to create tables:
+      :run create_bronze_tables.sql
+  2. Run the load procedure:
+       EXEC bronze.load_bronze;
 
 This will truncate existing data and reload from:
-
-sources/contact_exports.csv
-sources/m_d_contact_list.csv
+  - sources/contact_exports.csv
+  - sources/m_d_contact_list.csv
 
 ---
 
 ## 🥈 Silver Layer
 Purpose
-
 The Silver Layer is the cleaned and standardized layer.
 Here, data from the Bronze Layer is transformed — duplicates removed, columns standardized, and data quality checks performed.
 
 Scripts
-
-DDL Script: Defines cleaned and structured Silver tables.
-
-Load Procedure (proc_load): Cleans and loads data from Bronze → Silver.
-
-Tests Folder: Contains scripts to validate data quality after cleaning.
+  - DDL Script: Defines cleaned and structured Silver tables.
+  - Load Procedure (proc_load): Cleans and loads data from Bronze → Silver.
+  - Tests Folder: Contains scripts to validate data quality after cleaning.
 
 How to Run
 -- Create Silver tables
@@ -103,13 +89,11 @@ The Gold Layer is the final presentation layer.
 It produces curated datasets and views for reporting and sharing — specifically for David’s use.
 
 Outputs
-
 Creates two views:
-
+```
 gold.contacts_united_states — All U.S.-based contacts
-
 gold.contacts_international — All international contacts
-
+```
 How to Run
 -- Create Gold views
 :run create_gold_views.sql
