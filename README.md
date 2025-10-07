@@ -1,6 +1,6 @@
 # 🏢 ContactDatabase
 
-A database of REIT (Real Estate Investment Trust) contacts.
+A database of REIT (Real Estate Investment Trust) contacts. Ran in Microsft SQL Server.
 
 ---
 
