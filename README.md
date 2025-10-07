@@ -1,10 +1,10 @@
-#🏢 ContactDatabase
+# 🏢 ContactDatabase
 
 A database of REIT (Real Estate Investment Trust) contacts.
 
 ---
 
-##📘 Overview
+## 📘 Overview
 
 The ContactDatabase stores all REIT contacts that David has collected over time.
 Data originates from multiple Excel files that were cleaned and standardized to match the following column schema:
