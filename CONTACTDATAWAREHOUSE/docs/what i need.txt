@@ -1,0 +1,9 @@
+name, firm name, address, city, state ,zip, phone/email, 
+
+
+Contact exports,
+Investor (firm name), firm type, name, email, tel (phone number), city, state, zip 
+
+
+All unformatted
+Firm name, firm type, city, AUM, Address, State/county, zipcode, email, tel
